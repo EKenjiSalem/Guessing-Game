@@ -81,16 +81,27 @@ checkWin = () => {
  let showClass = document.getElementsByClassName("show");
 
  if (letterClass.length === showClass.length) {
-    overlay.style.display = '';
-    overlay.className = "win";
+
+  setTimeout( () => {
+    // Display win overlay
+    overlay.style.display = 'flex';
+    overlay.className = 'win';
     title.textContent = "You Win!!";
+    overlay.appendChild(win);
+  }, 600);
   
   } else if (missed >= 5) {
-    overlay.style.display = '';
-    overlay.className = "lose";
+
+  setTimeout( () => {
+    // Display the loose overlay
+    overlay.style.display = 'flex';
+    overlay.className = 'lose';
     title.textContent = "You Loose!!";
+    overlay.appendChild(lose);
+    }, 600);
   }
- newGame();
+
+   newGame();
  }
  
 
