@@ -59,7 +59,7 @@ checkLetter = button => {
 
 // Creating an event handler for the keyboard
 qwerty.addEventListener("click", e => {
-   if (e.target.tagName === "BUTTON" || e.target.className !== "chosen") {
+   if (e.target.tagName === "BUTTON" || e.target.className === "chosen") {
     let button = e.target;
     button.className = 'chosen';
     button.disabled = true;
